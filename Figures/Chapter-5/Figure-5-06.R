@@ -174,6 +174,9 @@ p_plot <- ggplot(df_long, aes(x = t, y = value, color = method, linetype = metho
   coord_cartesian(xlim = c(-4, 5)) +
   labs(x = "t", color = NULL, linetype = NULL) +
   theme_book +
-  theme(legend.position = "bottom")
+  theme(
+  legend.position = "bottom",
+  legend.key.width = grid::unit(1.5, "cm")
+)
 
 ggsave(file.path("Figures", "Outputs", "fig-5-06.pdf"), plot = p_plot, width = 4, height = 3)
