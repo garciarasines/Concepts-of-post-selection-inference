@@ -144,7 +144,7 @@ p_plot <- ggplot() +
   scale_linetype_manual(values = c(
     "V" = "solid",
     "COS" = "solid",
-    "PoSI" = "solid",
+    "PoSI" = "22",
     "Unadjusted" = "11"
   )) +
   scale_x_continuous(breaks = seq(0, 4, by = 0.4)) +
@@ -170,6 +170,7 @@ p_plot <- ggplot() +
     legend.position = c(0.68, 0.5),
     legend.background = element_blank(),
     legend.key = element_blank(),
+    legend.key.width = grid::unit(1, "cm"),
     panel.grid.minor = element_blank(),
     panel.grid.major = element_blank(),
     axis.title.y.right = element_text(color = "grey40"),
