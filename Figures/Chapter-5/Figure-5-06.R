@@ -163,8 +163,9 @@ df_long <- rbind(
 p_plot <- ggplot(df_long, aes(x = t, y = value, color = method, linetype = method)) +
   geom_hline(yintercept = 0.9, linewidth = 0.4, linetype = "dashed", color = "grey55") +
   geom_line(linewidth = 0.8, na.rm = TRUE) +
-  scale_color_manual(values = c("Carving" = "black", "Fission" = "grey45", "Selection prob." = "grey70")) +
-  scale_linetype_manual(values = c("Carving" = "solid", "Fission" = "solid", "Selection prob." = "longdash")) +
+  scale_color_manual(values = c("Carving" = "black", "Fission" = "grey45", "Selection prob." = "grey70"), guide = "none") +
+  scale_linetype_manual(values = c("Carving" = "solid", "Fission" = "solid", "Selection prob." = "22")) +
+  guides(linetype = guide_legend(override.aes = list(color = c("black", "grey45", "grey70"), linewidth = 1.2))) +
   scale_y_continuous(
     limits = c(0, 1),
     breaks = seq(0, 1, by = 0.2),
@@ -174,9 +175,6 @@ p_plot <- ggplot(df_long, aes(x = t, y = value, color = method, linetype = metho
   coord_cartesian(xlim = c(-4, 5)) +
   labs(x = "t", color = NULL, linetype = NULL) +
   theme_book +
-  theme(
-  legend.position = "bottom",
-  legend.key.width = grid::unit(1.5, "cm")
-)
+  theme(legend.position = "bottom", legend.key.width = grid::unit(1, "cm"))
 
 ggsave(file.path("Figures", "Outputs", "fig-5-06.pdf"), plot = p_plot, width = 4, height = 3)
