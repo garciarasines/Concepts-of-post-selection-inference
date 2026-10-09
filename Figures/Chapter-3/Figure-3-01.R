@@ -267,7 +267,7 @@ p_plot <- ggplot() +
     values = c(
       "Simultaneous" = "solid",
       "Local simultaneous" = "solid",
-      "COS" = "solid",
+      "COS" = "dashed",
       "Unadjusted" = "11"
     )
   ) +
