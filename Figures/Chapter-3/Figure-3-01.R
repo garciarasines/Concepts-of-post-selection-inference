@@ -267,7 +267,7 @@ p_plot <- ggplot() +
     values = c(
       "Simultaneous" = "solid",
       "Local simultaneous" = "solid",
-      "COS" = "dashed",
+      "COS" = "33",
       "Unadjusted" = "11"
     )
   ) +
@@ -317,6 +317,7 @@ p_plot <- ggplot() +
     legend.position = c(0.7, 0.7),
     legend.background = element_blank(),
     legend.key = element_blank(),
+    legend.key.width = grid::unit(.65, "cm"),
     panel.grid.minor = element_blank(),
     panel.grid.major = element_blank(),
     axis.title.y.right = element_text(
